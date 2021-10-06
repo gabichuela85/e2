@@ -5,13 +5,13 @@ _Any instructions/notes in italics should be removed from the template before su
 + URL: <http://e2p1.gabybrown.me>
 
 ## Game planning
-*Create an array representing the options that the player can throw (rock, paper, scissors, lizard, Spock) 
-*Randomly choose from this array for each of the two players, Player 1 and Player 2 
-*Compare the two values 
-    *If the two values are the same the game ends in a tie 
-    *Otherwise evaluate each of the player's _throws_ and determine a winner 
-*Keep track of the winner using a global variable 
-*First player to win __2__ games will be declared the ultimate winner 
+* Create an array representing the options that the player can throw (rock, paper, scissors, lizard, Spock) 
+* Randomly choose from this array for each of the two players, Player 1 and Player 2 
+* Compare the two values 
+    * If the two values are the same the game ends in a tie 
+    * Otherwise evaluate each of the player's _throws_ and determine a winner 
+* Keep track of the winner using a global variable 
+* First player to win __2__ games will be declared the ultimate winner 
 
 ## Outside resources
 *php.net 
