@@ -27,6 +27,7 @@
             <li>Spock vaporizes Rock</li>
             <li>Rock crushes Scissors</li>
         </ul>
+        <li>Best 2 out of 3 throws wins</li>
     </ul>
 </body>
 
