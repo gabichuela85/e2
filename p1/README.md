@@ -1,4 +1,3 @@
-_Any instructions/notes in italics should be removed from the template before submitting_
 
 # Project 1
 + By: Gabrielle Leon-Guerrero
@@ -14,9 +13,10 @@ _Any instructions/notes in italics should be removed from the template before su
 * First player to win __2__ games will be declared the ultimate winner 
 
 ## Outside resources
-*php.net 
-*GeeksforGeeks.org  
+* [php.net](http://php.net) 
+* [GeeksforGeeks.org](http://geeksforgeeks.org) 
 
 ## Notes for instructor
-*At first I attempted the war game because I do have some familiarity with PHP, but I found myself very stuck on creating the deck of cards. That is why there is a subdomain referencing a war game, and one of the pushes has comments referencing what was done on that game.*
-*Ultimately scaling back to the expanded Rock Paper Scissors game was the better choice for me, and once I got the game running, I opted to add in the best 2 out of 3 using a while loop.* 
+At first I attempted the war game because I do have some familiarity with PHP, but I found myself very stuck on creating the deck of cards. That is why there is a subdomain referencing a war game, and one of the pushes has comments referencing what was done on that game.
+
+Ultimately scaling back to the expanded Rock Paper Scissors game was the better choice for me, and once I got the game running, I opted to add in the best 2 out of 3 using a while loop.
