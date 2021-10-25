@@ -1,15 +1,15 @@
-#Project 2 
+# Project 2 
 ******************
--By: Gabrielle Brown 
--Production URL: [http://e2p2.gabybrown.me](http://e2p2.gabybrown.me) 
+- By: Gabrielle Brown 
+- Production URL: [http://e2p2.gabybrown.me](http://e2p2.gabybrown.me) 
 
 ******************
-##Outside resources 
+## Outside resources 
 ******************
 
 
 ******************
-##Notes for instructor 
+## Notes for instructor 
 ******************
 
 
