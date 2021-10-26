@@ -1,17 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <style>
-
-    </style>
+    <title>Rock Paper Scissors</title>
+    <style></style>
 </head>
 
 <body>
-    <!--<form method='POST' action='process.php'> -->
-    <h1>Rock Paper Scissors Lizard Spock</h1>
-    <p>
-        </form>
+
 </body>
 
 </html>
