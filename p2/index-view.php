@@ -8,11 +8,11 @@
 
 <body>
     <h1>Rock Paper Scissors Lizard Spock</h1>
-    <h2>Rules</h2>
+    <h2>Rules:</h2>
     <div id="rules">
         <p>Make a choice between rock, paper, scissors, lizard, or spock</p>
         <p>Keeping in mind the following:</p>
-        <ul>
+        <ul class="list">
             <li>Scissors cuts Paper</li>
             <li>Paper covers Rock</li>
             <li>Rock crushes Lizard</li>
