@@ -36,6 +36,7 @@
     </form>
     <?php if (isset($results)) { ?>
     <h1>Results</h1>
+
     <?php if (in_array($throw, $throwOptions)) { ?>
     You threw <?php echo $throw ?></br>
     The computer threw <?php echo $computer?></br>
