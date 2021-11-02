@@ -29,7 +29,7 @@ if (isset($_SESSION['results'])) {
     #Extract data from teh session 
 
     $results = $_SESSION['results']; 
-    $haveAnswer = $_SESSION['haveAnswer']; 
+    $haveAnswer = $results['haveAnswer']; 
     $correct = $results['correct']; 
     $lastWord = $_SESSION['word']; 
 
@@ -44,7 +44,7 @@ if (isset($_SESSION['results'])) {
 # Set the word 
 if ($useNewWord) {
     #prevent using the same word that was used last time 
-    while (!isset($word) or $word -- $lastWord) {
+    while (!isset($word) or $word == $lastWord) {
         $word = array_rand($words); 
     }
 } else {
@@ -53,7 +53,7 @@ if ($useNewWord) {
 
 #Update word in the session so we can check their answer in process.php 
 
-$_SESSION['word']; 
+$_SESSION['word'] = $word; 
 
 #Extract a hint and scramble the word for displaying in the view 
 $hint = $words[$word]; 
