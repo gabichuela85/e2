@@ -18,7 +18,14 @@ class AppController extends Controller
     public function contact()
     {
         return $this->app->view('contact', [
-            'email' => 'support@zipfoods.com', 
-        ]); 
+            'email' => 'support@zipfoods.com',
+        ]);
+    }
+
+    public function about()
+    {
+        return $this->app->view('about', [
+            'about' => 'Zipfoods is your one-stop-shop for convenient online grocery shopping in the greater Boston area.',
+        ]);
     }
 }
