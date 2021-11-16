@@ -1,5 +1,7 @@
 <?php
 
+namespace HES;
+
 class Number
 {
     public $num;
@@ -16,6 +18,11 @@ class Number
 
     public function isValid()
     {
+        $this->test();
         return is_numeric($this->num);
+    }
+    public function test()
+    {
+        var_dump('Testing....');
     }
 }
