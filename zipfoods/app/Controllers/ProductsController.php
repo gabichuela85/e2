@@ -27,6 +27,9 @@ class ProductsController extends Controller
     {
         $sku = $this->app->param('sku');
         
+        if (is_null($sku)) {
+            $this->app->redirect('/products');
+        }
 
         $product = $this->productsObj->getbySku($sku);
 
