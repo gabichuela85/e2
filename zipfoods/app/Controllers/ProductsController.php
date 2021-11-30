@@ -6,17 +6,9 @@ use App\Products;
 
 class ProductsController extends Controller
 {
-    private $productsObj;
-
-    public function __construct($app)
-    {
-        parent::__construct($app);
-        $this->productsObj = new Products($this->app->path('/database/products.json'));
-    }
-
     public function index()
     {
-        $products = $this->productsObj->getAll();
+        $products = $this->app->db()->all('products');
 
         return $this->app->view('products/index', [
             'products'=> $products,
@@ -31,11 +23,49 @@ class ProductsController extends Controller
             $this->app->redirect('/products');
         }
 
-        $product = $this->productsObj->getbySku($sku);
+        $productQuery = $this->app->db()->findbyColumn('products', 'sku', '=', $sku);
+        
+        
 
-        if (is_null($product)) {
+        if (empty($productQuery)) {
             return $this->app->view('products/missing');
+        } else {
+            $product = $productQuery[0];
         }
-        return $this->app->view('products/show', ['product'=>$product]);
+
+        $reviewSaved = $this->app->old('reviewSaved');
+        
+        return $this->app->view('products/show', [
+            'product'=>$product,
+            'reviewSaved' => $reviewSaved,
+        ]);
+    }
+    public function saveReview()
+    {
+        $this->app->validate([
+            'product_id' => 'required',
+            'sku' => 'required',
+            'name'=> 'required',
+            'review'=> 'required|minLength:200'
+        ]);
+
+        #If the above validation methods fail
+        #the user is redirected back to the product page
+        #the following code does not run
+        
+        $product_id = $this->app->input('product_id');
+        $sku = $this->app->input('sku');
+        $name = $this->app->input('name');
+        $review = $this->app->input('review');
+
+        #Todo: Persist review to the database...
+        $this->app->db()->insert('reviews', [
+            'product_id' => $product_id,
+            'name' => $name,
+            'review'=> $review,
+        ]);
+       
+
+        return $this->app->redirect('/product?sku=' . $sku, ['reviewSaved'=>true]);
     }
 }
