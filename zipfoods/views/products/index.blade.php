@@ -1,10 +1,10 @@
-@extends('templates.master') 
+@extends('templates.master')
 
-@section('title') 
-    All Products 
+@section('title')
+    All Products
 @endsection
 
-@section('content') 
+@section('content')
     <h2>All Products</h2>
 
     <div id='product-index'>
@@ -17,4 +17,5 @@
             </a>
         @endforeach
     </div>
-@endsection 
+    <a href='/products/new'>Don't see what you need? Add it here</a>
+@endsection
