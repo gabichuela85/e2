@@ -2,21 +2,52 @@
 
 @section('content')
 
-    <h2>Blackjack</h2>
+    <h2>High Low </h2>
 
-    <p>The goal of this game is to beat the dealer's hand without going over 21!</p>
+    <p>The goal of this game is to guess the number with the fewest guesses only being provided with Higher or Lower clues
+    </p>
     <p>Basic rules</p>
     <ul>
-        <li>Face cards are worth 10. Aces are worth 1 or 11, whichever makes a better hand.</li>
-        <li>Each player starts with two cards, one of the dealer's cards is hidden until the end.</li>
-        <li>To 'Hit' is to ask for another card. To 'Stand' is to hold your total and end your turn.</li>
-        <li>If you go over 21 you bust, and the dealer wins regardless of the dealer's hand.</li>
-        <li>If you are dealt 21 from the start (Ace & 10), you got a blackjack.</li>
-        <li>Dealer will hit until his/her cards total 17 or higher.</li>
+        <li>Enter a number between 1 and 100 in the form below</li>
+        <li>If you don't guess it right on the first try you will be given a clue whether the number you're looking for is
+            higher or lower.</li>
+        <li>Try to guess the number in the fewest tries possible.</li>
     </ul>
+    @if (!$number)
+        <form method='POST' action='/process'>
 
-    <form method='POST' action='deal'>
-        <button type='submit'>Deal Me In!</button>
-    </form>
+            <label name='name'>Your Name:</label>
+            <input test='name-field' type='text' name='name' id='name'>
+            <br>
+            <label name='guess'>Pick a number between 1 and 100</label>
+            <input test='guess-field' type='number' name='guess' id='guess'>
+            <br>
+            <button test='submit-buton' type='submit'>Enter my Guess</button>
+
+        </form>
+
+    @endif
+    @if ($app->errorsExist())
+        <ul>
+            @foreach ($app->errors() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    @endif
+    @if ($number)
+        <span test='game-outcome'>{{ $outcome }}</span>
+
+        <div test='second-guess'>
+            <form method='POST' action='reprocess'>
+                <label name='guess'>Pick a number between 1 and 100</label>
+                <input type='number' name='guess' id='guess'>
+                <button type='submit'>Enter my Guess</button>
+                <input type='hidden' name='number' value='{{ $number }}'>
+                <input type='hidden' name='tries' value='{{ $tries }}'>
+                <input type='hidden' name='name' value='{{ $name }}'>
+            </form>
+        </div>
+
+    @endif
 
 @endsection
